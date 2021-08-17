@@ -1,21 +1,21 @@
 import datetime
-from hellbot import *
-from hellbot.config import Config
-from hellbot.helpers import *
-from hellbot.utils import *
-from hellbot.random_strings import *
-from hellbot.version import __hell__
+from Speedo import *
+from Speedo.config import Config
+from Speedo.helpers import *
+from Speedo.utils import *
+from Speedo.random_strings import *
+from Speedo.version import __hell__
 from telethon import version
 
 
 HELL_USER = bot.me.first_name
 ForGo10God = bot.uid
 hell_mention = f"[{HELL_USER}](tg://user?id={ForGo10God})"
-hell_logo = "./hellbot/resources/pics/hellbot_logo.jpg"
-cjb = "./hellbot/resources/pics/cjb.jpg"
-restlo = "./hellbot/resources/pics/rest.jpeg"
-shuru = "./hellbot/resources/pics/shuru.jpg"
-shhh = "./hellbot/resources/pics/chup_madarchod.jpeg"
+hell_logo = "./Speedo/resources/pics/Speedo_logo.jpg"
+cjb = "./Speedo/resources/pics/cjb.jpg"
+restlo = "./Speedo/resources/pics/rest.jpeg"
+shuru = "./Speedo/resources/pics/shuru.jpg"
+shhh = "./Speedo/resources/pics/chup_madarchod.jpeg"
 hl = Config.HANDLER
 shl = Config.SUDO_HANDLER
 hell_ver = __hell__
@@ -49,7 +49,7 @@ if "@" in my_channel:
 if "@" in my_group:
     my_group = my_group.replace("@", "")
 
-chnl_link = "https://t.me/its_hellbot"
+chnl_link = "https://t.me/its_Speedo"
 hell_channel = f"[†hê Hêllẞø†]({chnl_link})"
 grp_link = "https://t.me/HellBot_Chat"
 hell_grp = f"[Hêllẞø† Group]({grp_link})"
@@ -71,4 +71,4 @@ WELCOME_FORMAT = """**Use these fomats in your welcome note to make them attract
 """
 # will add more soon
 
-# hellbot
+# Speedo

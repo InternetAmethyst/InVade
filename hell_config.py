@@ -110,4 +110,4 @@ class Development(Config):
     LOGGER = True
 
 
-# hellbot
+# Speedo
