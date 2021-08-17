@@ -33,7 +33,7 @@ BANNED_RIGHTS = ChatBannedRights(
     embed_links=True,
 )
 
-@bot.on(hell_cmd(pattern=r"kickall ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"kickall ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"kickall ?(.*)", allow_sudo=True))
 async def _(event):
     result = await event.client(
@@ -69,7 +69,7 @@ async def _(event):
     )
 
 
-@bot.on(hell_cmd(pattern=r"banall ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"banall ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"banall ?(.*)", allow_sudo=True))
 async def _(event):
     result = await event.client(
@@ -107,7 +107,7 @@ async def _(event):
     )
     
 
-@bot.on(hell_cmd(pattern=r"unbanall ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"unbanall ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"unbanall ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -138,7 +138,7 @@ async def _(event):
         await edit_or_reply(event, "{}: {} unbanned".format(event.chat_id, p))
 
 
-@bot.on(hell_cmd(pattern="ikuck ?(.*)"))
+@bot.on(Speedo_cmd(pattern="ikuck ?(.*)"))
 @bot.on(sudo_cmd(pattern="ikuck ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

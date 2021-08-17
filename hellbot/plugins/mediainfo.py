@@ -3,7 +3,7 @@ import os
 from . import *
 
 
-@bot.on(hell_cmd(pattern="mediainfo$"))
+@bot.on(Speedo_cmd(pattern="mediainfo$"))
 @bot.on(sudo_cmd(pattern="mediainfo$", allow_sudo=True))
 async def mediainfo(event):
     HELL_MEDIA = None

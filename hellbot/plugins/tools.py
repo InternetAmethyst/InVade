@@ -17,7 +17,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from . import *
 
 
-@bot.on(hell_cmd(pattern="scan ?(.*)"))
+@bot.on(Speedo_cmd(pattern="scan ?(.*)"))
 @bot.on(sudo_cmd(pattern="scan ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -59,7 +59,7 @@ async def _(event):
                 )
 
 
-@bot.on(hell_cmd(pattern=r"decode$", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"decode$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"decode$", allow_sudo=True))
 async def parseqr(qr_e):
     if not os.path.isdir(Config.TEMP_DIR):
@@ -96,7 +96,7 @@ async def parseqr(qr_e):
         os.remove(downloaded_file_name)
 
 
-@bot.on(hell_cmd(pattern="barcode ?(.*)"))
+@bot.on(Speedo_cmd(pattern="barcode ?(.*)"))
 @bot.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -148,7 +148,7 @@ async def _(event):
     await hellevent.delete()
 
 
-@bot.on(hell_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", allow_sudo=True))
 async def make_qr(makeqr):
     input_str = makeqr.pattern_match.group(1)
@@ -187,7 +187,7 @@ async def make_qr(makeqr):
     await makeqr.delete()
 
 
-@bot.on(hell_cmd(pattern="cal (.*)"))
+@bot.on(Speedo_cmd(pattern="cal (.*)"))
 @bot.on(sudo_cmd(pattern="cal (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -218,7 +218,7 @@ async def _(event):
     (end - start).seconds
 
 
-@bot.on(hell_cmd(pattern="currency (.*)"))
+@bot.on(Speedo_cmd(pattern="currency (.*)"))
 @bot.on(sudo_cmd(pattern="currency (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -255,7 +255,7 @@ async def _(event):
         )
 
 
-@bot.on(hell_cmd(pattern="currencies$"))
+@bot.on(Speedo_cmd(pattern="currencies$"))
 @bot.on(sudo_cmd(pattern="currencies$", allow_sudo=True))
 async def currencylist(ups):
     if ups.fwd_from:
@@ -269,7 +269,7 @@ async def currencylist(ups):
     await eor(ups, f"**List of some currencies:**\n{hmm}\n")
 
 
-@bot.on(hell_cmd(pattern="ifsc (.*)"))
+@bot.on(Speedo_cmd(pattern="ifsc (.*)"))
 @bot.on(sudo_cmd(pattern="ifsc (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -286,7 +286,7 @@ async def _(event):
         await eor(event, "`{}`: {}".format(input_str, r.text))
 
 
-@bot.on(hell_cmd(pattern="color (.*)"))
+@bot.on(Speedo_cmd(pattern="color (.*)"))
 @bot.on(sudo_cmd(pattern="color (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -322,7 +322,7 @@ async def _(event):
         )
 
 
-@bot.on(hell_cmd(pattern="xkcd ?(.*)"))
+@bot.on(Speedo_cmd(pattern="xkcd ?(.*)"))
 @bot.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -368,7 +368,7 @@ Year: {}""".format(
     else:
         await eod(hellevent, "xkcd n.{} not found!".format(xkcd_id))
 
-@bot.on(hell_cmd(pattern="dns (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="dns (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="dns (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -382,7 +382,7 @@ async def _(event):
         await eod(event, "i can't seem to find [this link]({}) on the internet".format(input_str, link_preview=False))
 
 
-@bot.on(hell_cmd(pattern="url (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="url (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="url (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -396,7 +396,7 @@ async def _(event):
         await eod(event, "something is wrong. please try again later.")
 
 
-@bot.on(hell_cmd(pattern="unshort (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="unshort (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="unshort (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

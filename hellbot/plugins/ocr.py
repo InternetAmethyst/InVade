@@ -70,7 +70,7 @@ def progress(current, total):
     )
 
 
-@bot.on(hell_cmd(pattern="ocrlang", outgoing=True))
+@bot.on(Speedo_cmd(pattern="ocrlang", outgoing=True))
 @bot.on(sudo_cmd(pattern="ocrlang", allow_sudo=True))
 async def get_ocr_languages(event):
     if event.fwd_from:
@@ -104,7 +104,7 @@ async def get_ocr_languages(event):
     await eor(event, str(a))
 
 
-@bot.on(hell_cmd(pattern=r"ocr (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"ocr (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"ocr (.*)", allow_sudo=True))
 async def parse_ocr_space_api(event):
     if event.fwd_from:

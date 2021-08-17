@@ -35,7 +35,7 @@ async def restart(event):
         execl(executable, executable, "bash", "HellBot")
 
 
-@bot.on(hell_cmd(pattern="restart$"))
+@bot.on(Speedo_cmd(pattern="restart$"))
 @bot.on(sudo_cmd(pattern="restart$", allow_sudo=True))
 async def re(hell):
     if hell.fwd_from:
@@ -47,7 +47,7 @@ async def re(hell):
         await event.edit("Please Set Your `HEROKU_API_KEY` to restart Hêllẞø†")
 
 
-@bot.on(hell_cmd(pattern="shutdown$"))
+@bot.on(Speedo_cmd(pattern="shutdown$"))
 @bot.on(sudo_cmd(pattern="shutdown$", allow_sudo=True))
 async def down(hell):
     if hell.fwd_from:
@@ -61,7 +61,7 @@ async def down(hell):
         sys.exit(0)
 
 
-@bot.on(hell_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", allow_sudo=True))
 async def variable(hell):
     if hell.fwd_from:
@@ -155,7 +155,7 @@ async def variable(hell):
             return await event.edit(f"`{variable}`  **does not exists**")
 
 
-@bot.on(hell_cmd(pattern="usage(?: |$)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="usage(?: |$)", outgoing=True))
 @bot.on(sudo_cmd(pattern="usage(?: |$)", allow_sudo=True))
 async def dyno_usage(hell):
     if hell.fwd_from:
@@ -217,7 +217,7 @@ async def dyno_usage(hell):
     )
 
 
-@bot.on(hell_cmd(pattern="logs$"))
+@bot.on(Speedo_cmd(pattern="logs$"))
 @bot.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(dyno):
     if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):

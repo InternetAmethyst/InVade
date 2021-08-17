@@ -8,7 +8,7 @@ from . import *
 # So please dont remove credit. 
 # You can use it in your repo. But dont remove these lines...
 
-@bot.on(hell_cmd(pattern="mev(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="mev(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="mev(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
     hell = kraken.pattern_match.group(1)
@@ -34,7 +34,7 @@ async def nope(kraken):
     else:
     	await eod(kraken, "**Error 404:**  Not Found")
     	
-@bot.on(hell_cmd(pattern="meev(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="meev(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="meev(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
     hell = kraken.pattern_match.group(1)

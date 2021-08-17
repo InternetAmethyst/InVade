@@ -9,7 +9,7 @@ from . import *
 
 lg_id = Config.LOGGER_ID
 
-@bot.on(hell_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
+@bot.on(Speedo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
 @bot.on(sudo_cmd(pattern="exec(?: |$|\n)(.*)", command="exec", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -37,7 +37,7 @@ async def _(event):
 
 
 
-@bot.on(hell_cmd(pattern="eval(?: |$|\n)(.*)", command="eval"))
+@bot.on(Speedo_cmd(pattern="eval(?: |$|\n)(.*)", command="eval"))
 @bot.on(sudo_cmd(pattern="eval(?: |$|\n)(.*)", command="eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -88,7 +88,7 @@ async def aexec(code, smessatatus):
     )
 
 
-@bot.on(hell_cmd(pattern="bash ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="bash ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

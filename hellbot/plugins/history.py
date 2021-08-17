@@ -3,7 +3,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from . import *
 
-@bot.on(hell_cmd(pattern="history ?(.*)"))
+@bot.on(Speedo_cmd(pattern="history ?(.*)"))
 @bot.on(sudo_cmd(pattern="history ?(.*)", allow_sudo=True))
 async def _(hellevent):
     if hellevent.fwd_from:
@@ -37,7 +37,7 @@ async def _(hellevent):
              await hellevent.client.send_message(hellevent.chat_id, response2.message)
 
 
-@bot.on(hell_cmd(pattern="unh ?(.*)"))
+@bot.on(Speedo_cmd(pattern="unh ?(.*)"))
 @bot.on(sudo_cmd(pattern="unh ?(.*)", allow_sudo=True))
 async def _(hellevent):
     if hellevent.fwd_from:

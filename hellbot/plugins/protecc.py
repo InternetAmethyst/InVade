@@ -19,7 +19,7 @@ def progress(current, total):
         )
     )
 
-@bot.on(hell_cmd(pattern="pt ?(.*)"))
+@bot.on(Speedo_cmd(pattern="pt ?(.*)"))
 @bot.on(sudo_cmd(pattern="pt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -115,7 +115,7 @@ async def _(event):
             pass
  
 
-@bot.on(hell_cmd(pattern="adwaifu ?(.*)"))
+@bot.on(Speedo_cmd(pattern="adwaifu ?(.*)"))
 @bot.on(sudo_cmd(pattern="adwaifu ?(.*)", allow_sudo=True))
 async def _(event):
     if not event.is_group:
@@ -128,7 +128,7 @@ async def _(event):
     await eod(event, f"**Added Chat** {event.chat.title} **With Id** `{event.chat_id}` **To Autowaifu Database.**")
 
 
-@bot.on(hell_cmd(pattern="rmwaifu ?(.*)"))
+@bot.on(Speedo_cmd(pattern="rmwaifu ?(.*)"))
 @bot.on(sudo_cmd(pattern="rmwaifu ?(.*)", allow_sudo=True))
 async def _(event):
     if not event.is_group:

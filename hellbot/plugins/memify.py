@@ -18,7 +18,7 @@ if not os.path.isdir(path):
     os.makedirs(path)
 
 
-@bot.on(hell_cmd(pattern="mmf ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="mmf ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="mmf ?(.*)", allow_sudo=True))
 async def _(event):
     _reply = await event.get_reply_message()
@@ -61,7 +61,7 @@ async def _(event):
         pass
 
 
-@bot.on(hell_cmd(pattern="mms ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="mms ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="mms ?(.*)", allow_sudo=True))
 async def _(event):
     _reply = await event.get_reply_message()
@@ -104,7 +104,7 @@ async def _(event):
     os.remove(pic)
 
     
-@bot.on(hell_cmd(pattern="doge(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="doge(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="doge(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
     hell = kraken.pattern_match.group(1)
@@ -132,7 +132,7 @@ async def nope(kraken):
      await eod(kraken, "Error 404:  Not Found")
 
 
-@bot.on(hell_cmd(pattern="gg(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="gg(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="gg(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
     hell = kraken.pattern_match.group(1)

@@ -9,7 +9,7 @@ from gtts import gTTS
 from . import *
 
 
-@bot.on(hell_cmd(pattern="trt ?(.*)"))
+@bot.on(Speedo_cmd(pattern="trt ?(.*)"))
 @bot.on(sudo_cmd(pattern="trt ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -44,7 +44,7 @@ async def _(event):
     except Exception as exc:
         await edit_or_reply(event, str(exc))
 
-@bot.on(hell_cmd(pattern=r"trc", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"trc", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"trc", allow_sudo=True))
 async def _(hell):
     if hell.fwd_from:
@@ -52,7 +52,7 @@ async def _(hell):
     await edit_or_reply(hell, "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/SfMæisér--𐌷𐌴ࠋࠋ𐌱𐍈𐌸-𐌾𐌰𐍀𐌾-06-04) ⚡", link_preview=False)
 
 
-@bot.on(hell_cmd(pattern="voice (.*)"))
+@bot.on(Speedo_cmd(pattern="voice (.*)"))
 @bot.on(sudo_cmd(pattern="voice (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

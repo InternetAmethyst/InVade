@@ -99,7 +99,7 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@bot.on(hell_cmd(outgoing=True, pattern=r"update(| now)$"))
+@bot.on(Speedo_cmd(outgoing=True, pattern=r"update(| now)$"))
 @bot.on(sudo_cmd(pattern="update(| now)$", allow_sudo=True))
 async def upstream(event):
     conf = event.pattern_match.group(1).strip()
@@ -222,7 +222,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     return
 
 
-@bot.on(hell_cmd(outgoing=True, pattern=r"update build$"))
+@bot.on(Speedo_cmd(outgoing=True, pattern=r"update build$"))
 @bot.on(sudo_cmd(pattern="update build$", allow_sudo=True))
 async def upstream(event):
     event = await edit_or_reply(event, "`Hard-Update In Progress... \nPlease wait until docker build is finished...`")

@@ -3,7 +3,7 @@ from telethon import events
 from Speedo.sql.autopost_sql import add_post, get_all_post, is_post, remove_post
 from . import *
 
-@bot.on(hell_cmd(pattern="autopost ?(.*)"))
+@bot.on(Speedo_cmd(pattern="autopost ?(.*)"))
 @bot.on(sudo_cmd(pattern="autopost ?(.*)", allow_sudo=True))
 async def _(event):
     if (event.is_private or event.is_group):
@@ -21,7 +21,7 @@ async def _(event):
     await eor(event, f"**📍 Started AutoPosting from** `{hel_}`")
 
 
-@bot.on(hell_cmd(pattern="rmautopost ?(.*)"))
+@bot.on(Speedo_cmd(pattern="rmautopost ?(.*)"))
 @bot.on(sudo_cmd(pattern="rmautopost ?(.*)", allow_sudo=True))
 async def _(event):
     if (event.is_private or event.is_group):

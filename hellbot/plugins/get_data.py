@@ -15,7 +15,7 @@ STR_LEN_MAX = 256
 BYTE_LEN_MAX = 64
 
        
-@bot.on(hell_cmd(pattern=r"yaml", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"yaml", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"yaml", allow_sudo=True))
 async def _(event):
     if not event.message.is_reply:
@@ -24,7 +24,7 @@ async def _(event):
     yaml_text = yaml_format(msg)
     await edit_or_reply(event, yaml_text, parse_mode=parse_pre)
 
-@bot.on(hell_cmd(pattern="json$", outgoing=True))
+@bot.on(Speedo_cmd(pattern="json$", outgoing=True))
 @bot.on(admin_cmd(pattern="json$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

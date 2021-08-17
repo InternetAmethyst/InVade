@@ -16,7 +16,7 @@ msg = f"""
 """
 botname = Config.BOT_USERNAME
 
-@bot.on(hell_cmd(pattern="repo$"))
+@bot.on(Speedo_cmd(pattern="repo$"))
 @bot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
 async def repo(event):
     try:
@@ -28,7 +28,7 @@ async def repo(event):
         await eor(event, msg)
 
 
-@bot.on(hell_cmd(pattern="help ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="help ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="help ?(.*)", allow_sudo=True))
 async def yardim(event):
     if event.fwd_from:
@@ -51,7 +51,7 @@ async def yardim(event):
         await eor(event, "**⚠️ ERROR !!** \nPlease Re-Check BOT_TOKEN & BOT_USERNAME on Heroku.")
 
 
-@bot.on(hell_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
 async def Speedot(event):
     if event.fwd_from:

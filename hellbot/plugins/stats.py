@@ -7,7 +7,7 @@ from telethon.tl.types import Channel, Chat, User
 from . import *
 
 
-@bot.on(hell_cmd(pattern="stats$"))
+@bot.on(Speedo_cmd(pattern="stats$"))
 @bot.on(sudo_cmd(pattern="stats$", allow_sudo=True))
 async def stats(
     event: NewMessage.Event,

@@ -3,7 +3,7 @@ import datetime
 
 from . import *
 
-@bot.on(hell_cmd(pattern="ping$"))
+@bot.on(Speedo_cmd(pattern="ping$"))
 @bot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def pong(hell):
     if hell.fwd_from:

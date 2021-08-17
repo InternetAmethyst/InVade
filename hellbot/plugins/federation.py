@@ -9,7 +9,7 @@ logs_id = Config.FBAN_LOG_GROUP
 fbot = "@MissRose_bot"
 
 
-@bot.on(hell_cmd(pattern="newfed ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="newfed ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="newfed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -35,7 +35,7 @@ async def _(event):
             await eod(event, f"{response.message.message}", 7)
 
 
-@bot.on(hell_cmd(pattern="renamefed ?(.*)"))
+@bot.on(Speedo_cmd(pattern="renamefed ?(.*)"))
 @bot.on(sudo_cmd(pattern="renamefed ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -56,7 +56,7 @@ async def _(event):
              await event.client.send_message(event.chat_id, response.message)
 
 
-@bot.on(hell_cmd(pattern="fstat ?(.*)"))
+@bot.on(Speedo_cmd(pattern="fstat ?(.*)"))
 @bot.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -88,7 +88,7 @@ async def _(event):
                 await hell.edit("`Please Unblock` @MissRose_Bot")
 
 
-@bot.on(hell_cmd(pattern="fedinfo ?(.*)"))
+@bot.on(Speedo_cmd(pattern="fedinfo ?(.*)"))
 @bot.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

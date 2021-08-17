@@ -101,7 +101,7 @@ async def on_afk(event):
         last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
 
 
-@bot.on(hell_cmd(pattern=r"afk (.*)", outgoing=True))  # pylint:disable=E0602
+@bot.on(Speedo_cmd(pattern=r"afk (.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -193,7 +193,7 @@ async def set_not_night(event):
         night_time = None
 
 
-@bot.on(hell_cmd(pattern=r"night ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"night ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

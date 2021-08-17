@@ -21,7 +21,7 @@ def progress(current, total):
     )
 
 
-@bot.on(hell_cmd(pattern="wikipedia (.*)"))
+@bot.on(Speedo_cmd(pattern="wikipedia (.*)"))
 @bot.on(sudo_cmd(pattern="wikipedia (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -38,7 +38,7 @@ async def _(event):
     )
 
 
-@bot.on(hell_cmd(pattern="watch (.*)"))
+@bot.on(Speedo_cmd(pattern="watch (.*)"))
 @bot.on(sudo_cmd(pattern="watch (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -88,7 +88,7 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(hell_cmd(pattern="google (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="google (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="google (.*)", allow_sudo=True))
 async def google(event):
     input_str = event.pattern_match.group(1)
@@ -116,7 +116,7 @@ async def google(event):
     see.clear()
 
 
-@bot.on(hell_cmd(pattern="img (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="img (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="img (.*)", allow_sudo=True))
 async def img(event):
     sim = event.pattern_match.group(1)
@@ -145,7 +145,7 @@ async def img(event):
     await hell.delete()
 
 
-@bot.on(hell_cmd(pattern="reverse"))
+@bot.on(Speedo_cmd(pattern="reverse"))
 @bot.on(sudo_cmd(pattern="reverse", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -205,7 +205,7 @@ More Info: Open this <a href="{the_location}">Link</a> in {ms} seconds""".format
     await hell.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
-@bot.on(hell_cmd(pattern="gps ?(.*)"))
+@bot.on(Speedo_cmd(pattern="gps ?(.*)"))
 @bot.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
     if event.fwd_from:

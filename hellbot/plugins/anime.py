@@ -8,7 +8,7 @@ from . import *
 
 FILLERS = {}
 
-@bot.on(hell_cmd(pattern="anilist (.*)"))
+@bot.on(Speedo_cmd(pattern="anilist (.*)"))
 @bot.on(sudo_cmd(pattern="anilist (.*)", allow_sudo=True))
 async def anilist(event):
     if event.fwd_from:
@@ -25,7 +25,7 @@ async def anilist(event):
         await event.edit(msg, link_preview=True)
 
 
-@bot.on(hell_cmd(pattern="anime(?: |$)(.*)"))
+@bot.on(Speedo_cmd(pattern="anime(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="anime(?: |$)(.*)", allow_sudo=True))
 async def nope(hel_):
     hell = hel_.pattern_match.group(1)
@@ -51,7 +51,7 @@ async def nope(hel_):
     	await eod(hel_, "**Error 404:**  Not Found")
     
     
-@bot.on(hell_cmd(pattern="manga(?: |$)(.*)"))
+@bot.on(Speedo_cmd(pattern="manga(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="manga(?: |$)(.*)", allow_sudo=True))
 async def nope(hel_):
     hell = hel_.pattern_match.group(1)
@@ -77,7 +77,7 @@ async def nope(hel_):
     
     
 
-@bot.on(hell_cmd(pattern="character(?: |$)(.*)"))
+@bot.on(Speedo_cmd(pattern="character(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="character(?: |$)(.*)", allow_sudo=True))
 async def nope(hel_):
     hell = hel_.pattern_match.group(1)
@@ -103,7 +103,7 @@ async def nope(hel_):
     
 
 
-@bot.on(hell_cmd(pattern="fillers ?(.*)"))
+@bot.on(Speedo_cmd(pattern="fillers ?(.*)"))
 @bot.on(sudo_cmd(pattern="fillers ?(.*)", allow_sudo=True))
 async def canon(event):
     hell = event.text[9:]
@@ -147,7 +147,7 @@ async def canon(event):
     await nub.edit(Speedo)
 
 
-@bot.on(hell_cmd(pattern="aniquote$"))
+@bot.on(Speedo_cmd(pattern="aniquote$"))
 @bot.on(sudo_cmd(pattern="aniquote$", allow_sudo=True))
 async def quote(event):
     hell = await eor(event, "(ﾉ◕ヮ◕)ﾉ*.✧")

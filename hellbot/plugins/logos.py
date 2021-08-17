@@ -10,7 +10,7 @@ from . import *
 
 PICS_STR = []
 
-@bot.on(hell_cmd(pattern=r"logo ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"logo ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"logo ?(.*)", allow_sudo=True))
 async def lg1(hellevent):
     event = await eor(hellevent, "`Processing.....`")

@@ -27,7 +27,7 @@ def convert_tosticker(response, filename=None):
     return filename
 
 
-@bot.on(hell_cmd(pattern="(rmbg|srmbg) ?(.*)"))
+@bot.on(Speedo_cmd(pattern="(rmbg|srmbg) ?(.*)"))
 @bot.on(sudo_cmd(pattern="(rmbg|srmbg) ?(.*)", allow_sudo=True))
 async def remove_background(event):
     if Config.REMOVE_BG_API is None:

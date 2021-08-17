@@ -13,7 +13,7 @@ if not os.path.isdir(dwllpath):
     os.makedirs(dwllpath)
 
 
-@bot.on(hell_cmd(pattern=r"thug"))
+@bot.on(Speedo_cmd(pattern=r"thug"))
 @bot.on(sudo_cmd(pattern=r"thug", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -46,7 +46,7 @@ async def _(event):
             os.remove(files)
 
 
-@bot.on(hell_cmd(pattern=r"trigger"))
+@bot.on(Speedo_cmd(pattern=r"trigger"))
 @bot.on(sudo_cmd(pattern=r"trigger", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -68,7 +68,7 @@ async def _(event):
             os.remove(files)
 
 
-@bot.on(hell_cmd(pattern=r"geyy"))
+@bot.on(Speedo_cmd(pattern=r"geyy"))
 @bot.on(sudo_cmd(pattern=r"geyy", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -90,7 +90,7 @@ async def _(event):
             os.remove(files)
 
 
-@bot.on(hell_cmd(pattern=r"pix"))
+@bot.on(Speedo_cmd(pattern=r"pix"))
 @bot.on(sudo_cmd(pattern=r"pix", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -112,7 +112,7 @@ async def _(event):
             os.remove(files)
 
 
-@bot.on(hell_cmd(pattern="ytc"))
+@bot.on(Speedo_cmd(pattern="ytc"))
 @bot.on(sudo_cmd(pattern="ytc", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

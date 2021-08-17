@@ -53,7 +53,7 @@ async def get_user_from_id(user, event):
 
 
 
-@bot.on(hell_cmd(pattern="gpro ?(.*)"))
+@bot.on(Speedo_cmd(pattern="gpro ?(.*)"))
 @bot.on(sudo_cmd(pattern="gpro ?(.*)", allow_sudo=True))
 async def _(hellevent):
     i = 0
@@ -106,7 +106,7 @@ async def _(hellevent):
     await bot.send_message(Config.LOGGER_ID, f"#GPROMOTE \n\n**Globally Promoted User :** [{user.first_name}](tg://user?id={user.id}) \n\n**Total Chats :** `{i}`")
 
 
-@bot.on(hell_cmd(pattern="gdem ?(.*)"))
+@bot.on(Speedo_cmd(pattern="gdem ?(.*)"))
 @bot.on(sudo_cmd(pattern="gdem ?(.*)", allow_sudo=True))
 async def _(hellevent):
     i = 0
@@ -159,7 +159,7 @@ async def _(hellevent):
     await bot.send_message(Config.LOGGER_ID, f"#GDEMOTE \n\n**Globally Demoted :** [{user.first_name}](tg://user?id={user.id}) \n\n**Total Chats :** `{i}`")
 
 
-@bot.on(hell_cmd(pattern=r"gban ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"gban ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"gban ?(.*)", allow_sudo=True))
 async def _(event):
     hell = await eor(event, "`Gbanning...`")
@@ -217,7 +217,7 @@ async def _(event):
         await hell.edit(ogmsg)
 
 
-@bot.on(hell_cmd(pattern=r"ungban ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"ungban ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"ungban ?(.*)", allow_sudo=True))
 async def _(event):
     hell = await eor(event, "`Ungban in progress...`")
@@ -246,7 +246,7 @@ async def _(event):
     )
 
 
-@bot.on(hell_cmd(pattern="listgban$"))
+@bot.on(Speedo_cmd(pattern="listgban$"))
 @bot.on(sudo_cmd(pattern="listgban$", allow_sudo=True))
 async def already(event):
     gbanned_users = all_gbanned()
@@ -280,7 +280,7 @@ async def _(event):
                     pass
 
 
-@bot.on(hell_cmd(pattern=r"gkick ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"gkick ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"gkick ?(.*)", allow_sudo=True))
 async def gkick(event):
     hell = await eor(event, "`Kicking globally...`")
@@ -313,7 +313,7 @@ async def gkick(event):
         await hell.edit(gkmsg)
 
 
-@bot.on(hell_cmd(pattern=r"gmute ?(\d+)?"))
+@bot.on(Speedo_cmd(pattern=r"gmute ?(\d+)?"))
 @bot.on(sudo_cmd(allow_sudo=True, pattern=r"gmute ?(\d+)?"))
 async def gm(event):
     private = False
@@ -354,7 +354,7 @@ async def gm(event):
         
 
 
-@bot.on(hell_cmd(outgoing=True, pattern=r"ungmute ?(\d+)?"))
+@bot.on(Speedo_cmd(outgoing=True, pattern=r"ungmute ?(\d+)?"))
 @bot.on(sudo_cmd(allow_sudo=True, pattern=r"ungmute ?(\d+)?"))
 async def endgmute(event):
     private = False

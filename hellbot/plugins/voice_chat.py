@@ -17,7 +17,7 @@ def all_users(a, b):
         yield a[c : c + b]
 
 
-@bot.on(hell_cmd(pattern="startvc$"))
+@bot.on(Speedo_cmd(pattern="startvc$"))
 @bot.on(sudo_cmd(pattern="startvc$", allow_sudo=True))
 async def _(event):
     try:
@@ -27,7 +27,7 @@ async def _(event):
         await eor(event, f"`{str(e)}`")
 
 
-@bot.on(hell_cmd(pattern="endvc$"))
+@bot.on(Speedo_cmd(pattern="endvc$"))
 @bot.on(sudo_cmd(pattern="endvc$", allow_sudo=True))
 async def _(event):
     try:
@@ -37,7 +37,7 @@ async def _(event):
         await eor(event, f"`{str(e)}`")
 
 
-@bot.on(hell_cmd(pattern="vcinvite$"))
+@bot.on(Speedo_cmd(pattern="vcinvite$"))
 @bot.on(sudo_cmd(pattern="vcinvite$", allow_sudo=True))
 async def _(event):
     hell = await eor(event, "`🧐 Inviting Users To Voice Chat....`")

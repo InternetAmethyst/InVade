@@ -19,7 +19,7 @@ def dogbin(magnets):
     return urls
 
 
-@bot.on(hell_cmd(pattern=r"tsearch ?(.*)"))
+@bot.on(Speedo_cmd(pattern=r"tsearch ?(.*)"))
 @bot.on(sudo_cmd(pattern=r"tsearch ?(.*)", allow_sudo=True))
 async def tor_search(event):
     if event.fwd_from:
@@ -92,7 +92,7 @@ async def tor_search(event):
     await hell.edit(msg, link_preview=False)
 
 
-@bot.on(hell_cmd(pattern=r"movie (torrentz2\.eu|idop\.se) (.*)"))
+@bot.on(Speedo_cmd(pattern=r"movie (torrentz2\.eu|idop\.se) (.*)"))
 @bot.on(sudo_cmd(pattern=r"movie (torrentz2\.eu|idop\.se) (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

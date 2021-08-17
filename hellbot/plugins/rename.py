@@ -36,7 +36,7 @@ def get_video_thumb(file, output=None, width=90):
         return output
 
 
-@bot.on(hell_cmd(pattern="rename (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="rename (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="rename (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -68,7 +68,7 @@ async def _(event):
         await eod(hell, f"Syntax `{hl}rename file.name` as reply to a Telegram media")
 
 
-@bot.on(hell_cmd(pattern="rnupload (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="rnupload (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="rnupload (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -117,7 +117,7 @@ async def _(event):
         await hell.edit("Syntax // `{}rnupload file.name` as reply to a Telegram media".format(hl))
 
 
-@bot.on(hell_cmd(pattern="rnsupload (.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="rnsupload (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="rnsupload (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

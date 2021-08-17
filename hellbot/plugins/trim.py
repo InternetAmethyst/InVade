@@ -37,7 +37,7 @@ def media_type(message):
     return media
     
 
-@bot.on(hell_cmd(pattern="tsave$"))
+@bot.on(Speedo_cmd(pattern="tsave$"))
 @bot.on(sudo_cmd(pattern="tsave$", allow_sudo=True))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
@@ -77,7 +77,7 @@ async def ff_mpeg_trim_cmd(event):
         )
 
 
-@bot.on(hell_cmd(pattern="vtrim"))
+@bot.on(Speedo_cmd(pattern="vtrim"))
 @bot.on(sudo_cmd(pattern="vtrim", allow_sudo=True))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
@@ -158,7 +158,7 @@ async def ff_mpeg_trim_cmd(event):
     await eod(hellevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@bot.on(hell_cmd(pattern="atrim"))
+@bot.on(Speedo_cmd(pattern="atrim"))
 @bot.on(sudo_cmd(pattern="atrim", allow_sudo=True))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
@@ -216,7 +216,7 @@ async def ff_mpeg_trim_cmd(event):
     await eod(hellevent, f"`Completed Process in {ms} seconds`", 3)
 
 
-@bot.on(hell_cmd(pattern="tclear$"))
+@bot.on(Speedo_cmd(pattern="tclear$"))
 @bot.on(sudo_cmd(pattern="tclear$", allow_sudo=True))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:

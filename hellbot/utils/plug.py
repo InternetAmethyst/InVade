@@ -65,7 +65,7 @@ def load_module(shortname):
         mod.delete_hell = delete_hell
         mod.eod = delete_hell
         mod.Var = Config
-        mod.admin_cmd = hell_cmd
+        mod.admin_cmd = Speedo_cmd
         # support for other userbots
         sys.modules["userbot.utils"] = Speedo.utils
         sys.modules["userbot"] = Speedo

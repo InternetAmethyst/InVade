@@ -33,7 +33,7 @@ KANGING_STR = [
 Speedo = Config.STICKER_PACKNAME
 
 
-@bot.on(hell_cmd(outgoing=True, pattern="kang"))
+@bot.on(Speedo_cmd(outgoing=True, pattern="kang"))
 @bot.on(sudo_cmd(pattern="kang", allow_sudo=True))
 async def kang(args):
     user = await bot.get_me()
@@ -334,7 +334,7 @@ async def get_pack_info(event):
     await edit_or_reply(event, OUTPUT)
 
 
-@bot.on(hell_cmd(pattern=r"delst ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"delst ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"delst ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -375,7 +375,7 @@ async def _(event):
             await event.edit("**😐 Deleted that replied sticker, it will stop being available to Telegram users within about an hour.**")
 
 
-@bot.on(hell_cmd(pattern=r"editst ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"editst ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"editst ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -418,7 +418,7 @@ async def _(event):
             else:
                 await event.edit(f"**😉 Done!! Edited sticker emoji**\n\nNew Emoji(s) :- {hell}")
 
-@bot.on(hell_cmd(pattern="text (.*)"))
+@bot.on(Speedo_cmd(pattern="text (.*)"))
 @bot.on(sudo_cmd(pattern="text (.*)", allow_sudo=True))
 async def sticklet(event):
     R = random.randint(0, 256)
@@ -477,7 +477,7 @@ async def get_font_file(client, channel_id):
     return await client.download_media(font_file_message)
 
 
-@bot.on(hell_cmd(pattern="waifu(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="waifu(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="waifu(?: |$)(.*)", allow_sudo=True))
 async def waifu(animu):
     text = animu.pattern_match.group(1)

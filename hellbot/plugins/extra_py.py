@@ -5,7 +5,7 @@ from telethon.tl.types import InputMessagesFilterDocument
 
 from . import *
 
-@bot.on(hell_cmd(pattern="extdl$", outgoing=True))
+@bot.on(Speedo_cmd(pattern="extdl$", outgoing=True))
 @bot.on(sudo_cmd(pattern="extdl$", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
@@ -39,7 +39,7 @@ async def install(event):
             )
 
 
-@bot.on(hell_cmd(pattern=r"installall (.*)"))
+@bot.on(Speedo_cmd(pattern=r"installall (.*)"))
 @bot.on(sudo_cmd(pattern=r"installall (.*)", allow_sudo=True))
 async def install(event):
     if event.fwd_from:

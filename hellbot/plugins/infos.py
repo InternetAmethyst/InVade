@@ -32,7 +32,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 
-@bot.on(hell_cmd(pattern="recognize ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="recognize ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="recognize ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -76,7 +76,7 @@ async def _(event):
             await eod(event, "sorry, I couldnt find it")
 
 
-@bot.on(hell_cmd(pattern="info ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="info ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -210,7 +210,7 @@ async def get_full_user(event):
                 return None, e
 
 
-@bot.on(hell_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="chatinfo(?: |$)(.*)", allow_sudo=True))
 async def info(event):
     if event.fwd_from:
@@ -482,7 +482,7 @@ async def fetch_info(chat, event):
     return caption
 
 
-@bot.on(hell_cmd(pattern=r"users ?(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern=r"users ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"users ?(.*)", allow_sudo=True))
 async def get_users(show):
     if show.fwd_from:
@@ -531,7 +531,7 @@ async def get_users(show):
         remove("userslist.txt")
 
 
-@bot.on(hell_cmd(pattern="admins ?(.*)"))
+@bot.on(Speedo_cmd(pattern="admins ?(.*)"))
 @bot.on(sudo_cmd(pattern="admins ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -584,7 +584,7 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(hell_cmd(pattern="bots ?(.*)"))
+@bot.on(Speedo_cmd(pattern="bots ?(.*)"))
 @bot.on(sudo_cmd(pattern="bots ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -617,7 +617,7 @@ async def _(event):
     await event.edit(mentions)
     
     
-@bot.on(hell_cmd(pattern="id$"))
+@bot.on(Speedo_cmd(pattern="id$"))
 @bot.on(sudo_cmd(pattern="id$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

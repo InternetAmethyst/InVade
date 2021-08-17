@@ -23,7 +23,7 @@ async def on_new_message(event):
             break
 
 
-@bot.on(hell_cmd(pattern="addblacklist ((.|\n)*)"))
+@bot.on(Speedo_cmd(pattern="addblacklist ((.|\n)*)"))
 @bot.on(sudo_cmd(pattern="addblacklist ((.|\n)*)", allow_sudo=True))
 async def on_add_black_list(event):
     if event.fwd_from:
@@ -43,7 +43,7 @@ async def on_add_black_list(event):
     )
 
 
-@bot.on(hell_cmd(pattern="rmblacklist ((.|\n)*)"))
+@bot.on(Speedo_cmd(pattern="rmblacklist ((.|\n)*)"))
 @bot.on(sudo_cmd(pattern="rmblacklist ((.|\n)*)", allow_sudo=True))
 async def on_delete_blacklist(event):
     if event.fwd_from:
@@ -64,7 +64,7 @@ async def on_delete_blacklist(event):
     )
 
 
-@bot.on(hell_cmd(pattern="listblacklist$"))
+@bot.on(Speedo_cmd(pattern="listblacklist$"))
 @bot.on(sudo_cmd(pattern="listblacklist$", allow_sudo=True))
 async def on_view_blacklist(event):
     if event.fwd_from:

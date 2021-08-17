@@ -25,7 +25,7 @@ except:
 
 from . import *
 
-@bot.on(hell_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
     hell = kraken.pattern_match.group(1)
@@ -49,7 +49,7 @@ async def nope(kraken):
     await kraken.delete()
     
 
-@bot.on(hell_cmd(pattern="song(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="song(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="song(?: |$)(.*)", allow_sudo=True))
 async def download_video(v_url):
     lazy = v_url
@@ -171,7 +171,7 @@ async def download_video(v_url):
         await rkp.delete()
 
 
-@bot.on(hell_cmd(pattern="vsong(?: |$)(.*)", outgoing=True))
+@bot.on(Speedo_cmd(pattern="vsong(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="vsong(?: |$)(.*)", allow_sudo=True))
 async def download_video(v_url):
     lazy = v_url

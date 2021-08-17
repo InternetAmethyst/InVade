@@ -21,7 +21,7 @@ from Speedo.helpers import *
 from Speedo.config import Config
 
 # admin cmd or normal user cmd
-def hell_cmd(pattern=None, command=None, **args):
+def Speedo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
