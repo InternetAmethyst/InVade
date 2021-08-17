@@ -19,7 +19,7 @@ jobs:
 
         with:
 
-          find: "hellbot"
+          find: "ɦɛʟʟɮօt"
 
           replace: "Speedo"
 
